@@ -1,0 +1,16 @@
+node_modules
+dist
+release
+src-tauri
+e2e
+.github
+.workbuddy
+period-screenshot.png
+playwright.config.ts
+postcss.config.js
+pnpm-workspace.yaml
+tailwind.config.js
+tsconfig.json
+checkpoint.md
+package-lock.json
+*.log

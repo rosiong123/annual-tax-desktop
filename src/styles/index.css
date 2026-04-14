@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f7fa; min-height: 100vh; }
+#root { min-height: 100vh; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+
+.card { @apply bg-white rounded-lg shadow-sm border border-gray-100 p-6; }
+.btn-primary { @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2; }
+.btn-secondary { @apply bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-lg transition-all flex items-center gap-2; }
+.btn-green { @apply bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-all flex items-center gap-2; }

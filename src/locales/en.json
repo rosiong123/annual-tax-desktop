@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "AI Tax Compliance OS",
+    "subtitle": "Monthly · Quarterly · Annual Full Coverage"
+  },
+  "steps": {
+    "import": "Data Import",
+    "audit": "AI Audit",
+    "analyze": "Analysis Report",
+    "optimize": "Optimization",
+    "file": "Generate Filing"
+  },
+  "import": {
+    "title": "Import Financial Data",
+    "subtitle": "Choose a data import method or use sample data to get started",
+    "excel": "Excel Import",
+    "excelDesc": "Upload Excel file, automatically parse invoice data",
+    "finance": "Finance Software",
+    "financeDesc": "Connect to用友, 金蝶 and other finance systems",
+    "demo": "Sample Data",
+    "demoDesc": "Use simulated data for demonstration",
+    "comingSoon": "Coming Soon",
+    "startAudit": "Start Audit"
+  },
+  "audit": {
+    "title": "AI Dashboard",
+    "subtitle": "Multi-Agent Decision Flow · Evidence Chain Audit",
+    "riskLevel": {
+      "critical": "Critical",
+      "high": "High Risk",
+      "medium": "Medium Risk",
+      "low": "Low Risk"
+    },
+    "kpi": {
+      "score": "Overall Score",
+      "riskAmount": "Blocked Risk Amount",
+      "slpeSavings": "SLPE Savings",
+      "evidenceScore": "Evidence Completeness"
+    },
+    "agentFlow": {
+      "L1": "Fact Unification",
+      "L3": "Risk Scan",
+      "SLPE": "SLPE Benefits",
+      "Final": "Final Decision"
+    },
+    "terminal": "Terminal",
+    "evidencePass": "Evidence Completeness Passed",
+    "evidenceFail": "Evidence Completeness Insufficient",
+    "exportPDF": "Export PDF Report"
+  },
+  "analyze": {
+    "title": "AI Analysis Report",
+    "taxBurden": "Tax Burden Analysis",
+    "riskAnalysis": "Risk Analysis",
+    "compliance": "Compliance",
+    "assessment": "Assessment",
+    "normal": "Normal",
+    "abnormal": "Abnormal",
+    "compliant": "Compliant",
+    "nonCompliant": "Non-Compliant",
+    "prev": "Previous",
+    "getSuggestions": "Get Optimization Suggestions"
+  },
+  "optimize": {
+    "title": "Optimization Suggestions",
+    "estimatedSavings": "Estimated Tax Savings",
+    "suggestions": "Suggestions",
+    "priority": {
+      "high": "High",
+      "medium": "Medium"
+    },
+    "implementation": "Implementation Steps",
+    "prev": "Previous",
+    "generateFiling": "Generate Filing Forms"
+  },
+  "filing": {
+    "title": "Filing Forms Generated",
+    "subtitle": "Please verify before filing",
+    "exportFormsList": "Export Forms List PDF",
+    "exportA100000": "Export A100000 PDF",
+    "exportExcel": "Export Excel",
+    "oneClickFiling": "One-Click Filing",
+    "prev": "Previous"
+  },
+  "ai": {
+    "settings": "AI Settings",
+    "online": "Online",
+    "offline": "Offline",
+    "selectModel": "Select Model",
+    "configured": "Configured",
+    "notConfigured": "Not Configured",
+    "save": "Save",
+    "delete": "Delete",
+    "apiKeyRequired": "Please configure API Key in Settings"
+  },
+  "risk": {
+    "high": "High Risk",
+    "medium": "Medium Risk",
+    "low": "Low Risk",
+    "passed": "Passed",
+    "failed": "Failed",
+    "warning": "Warning",
+    "totalChecks": "Total Checks",
+    "passedChecks": "Passed",
+    "failedChecks": "Failed",
+    "warnings": "Warnings"
+  },
+  "slpe": {
+    "eligible": "Eligible for SLPE Benefits",
+    "notEligible": "Not Eligible for SLPE Benefits",
+    "taxRate": "Preferential Tax Rate",
+    "savings": "Tax Savings",
+    "reason": "Preferential Basis"
+  },
+  "actions": {
+    "repair": "Repair",
+    "confirm": "Confirm",
+    "supplement": "Supplement",
+    "check": "Check",
+    "submit": "Submit"
+  },
+  "messages": {
+    "processing": "Processing...",
+    "aiAnalyzing": "AI Analyzing...",
+    "generatingSuggestions": "Generating Suggestions...",
+    "generating": "Generating...",
+    "download": "Download",
+    "export": "Export"
+  }
+}

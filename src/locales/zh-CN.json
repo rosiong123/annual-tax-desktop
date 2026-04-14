@@ -1,0 +1,130 @@
+{
+  "app": {
+    "title": "AI税务合规 OS",
+    "subtitle": "月度 · 季度 · 年度 全周期覆盖"
+  },
+  "steps": {
+    "import": "数据导入",
+    "audit": "AI审核",
+    "analyze": "分析报告",
+    "optimize": "优化方案",
+    "file": "生成申报"
+  },
+  "import": {
+    "title": "导入财务数据",
+    "subtitle": "选择数据导入方式或使用示例数据开始体验",
+    "excel": "Excel导入",
+    "excelDesc": "上传Excel文件，自动解析发票数据",
+    "finance": "财务软件对接",
+    "financeDesc": "连接用友、金蝶等财务系统",
+    "demo": "示例数据",
+    "demoDesc": "使用模拟数据进行演示",
+    "comingSoon": "即将推出",
+    "startAudit": "开始审核"
+  },
+  "audit": {
+    "title": "AI驾驶舱",
+    "subtitle": "多智能体决策流 · 证据链审计",
+    "riskLevel": {
+      "critical": "紧急",
+      "high": "高风险",
+      "medium": "中风险",
+      "low": "低风险"
+    },
+    "kpi": {
+      "score": "综合得分",
+      "riskAmount": "拦截风险额",
+      "slpeSavings": "小微优惠节省",
+      "evidenceScore": "证据完整度"
+    },
+    "agentFlow": {
+      "L1": "事实统一",
+      "L3": "风险扫描",
+      "SLPE": "小微优惠",
+      "Final": "裁决结项"
+    },
+    "terminal": "终端",
+    "evidencePass": "证据完整度通过",
+    "evidenceFail": "证据完整度不足",
+    "exportPDF": "导出PDF报告"
+  },
+  "analyze": {
+    "title": "AI分析报告",
+    "taxBurden": "税负分析",
+    "riskAnalysis": "风险分析",
+    "compliance": "合规性",
+    "assessment": "评估",
+    "normal": "正常",
+    "abnormal": "异常",
+    "compliant": "合规",
+    "nonCompliant": "存在违规项",
+    "prev": "上一步",
+    "getSuggestions": "获取优化建议"
+  },
+  "optimize": {
+    "title": "优化建议",
+    "estimatedSavings": "预估节税金额",
+    "suggestions": "优化建议",
+    "priority": {
+      "high": "高",
+      "medium": "中"
+    },
+    "implementation": "实施步骤",
+    "prev": "上一步",
+    "generateFiling": "生成申报表"
+  },
+  "filing": {
+    "title": "申报表已生成",
+    "subtitle": "请核对后进行申报",
+    "exportFormsList": "导出表单清单PDF",
+    "exportA100000": "导出A100000表PDF",
+    "exportExcel": "导出Excel",
+    "oneClickFiling": "一键申报",
+    "prev": "上一步"
+  },
+  "ai": {
+    "settings": "AI设置",
+    "online": "在线",
+    "offline": "离线",
+    "selectModel": "选择模型",
+    "configured": "已配置",
+    "notConfigured": "未配置",
+    "save": "保存",
+    "delete": "删除",
+    "apiKeyRequired": "请先在设置中配置API Key"
+  },
+  "risk": {
+    "high": "高风险",
+    "medium": "中风险",
+    "low": "低风险",
+    "passed": "通过",
+    "failed": "不合格",
+    "warning": "警告",
+    "totalChecks": "检查项",
+    "passedChecks": "通过",
+    "failedChecks": "不合格",
+    "warnings": "警告"
+  },
+  "slpe": {
+    "eligible": "符合小微优惠条件",
+    "notEligible": "不符合小微优惠条件",
+    "taxRate": "优惠税率",
+    "savings": "节税金额",
+    "reason": "优惠依据"
+  },
+  "actions": {
+    "repair": "修复",
+    "confirm": "确认",
+    "supplement": "补充",
+    "check": "核对",
+    "submit": "提交"
+  },
+  "messages": {
+    "processing": "处理中...",
+    "aiAnalyzing": "AI分析中...",
+    "generatingSuggestions": "生成建议中...",
+    "generating": "生成中...",
+    "download": "下载",
+    "export": "导出"
+  }
+}

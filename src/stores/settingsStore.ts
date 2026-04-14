@@ -1,6 +1,16 @@
 /**
  * 设置状态管理 - Settings Store
  * 使用 Zustand 管理企业信息和AI设置
+ *
+ * 存储策略：
+ * - localStorage（限制 2MB 以内）：
+ *   ✅ API Key 配置（已用 safeStorage 加密）
+ *   ✅ 用户偏好（选中的模型、UI 设置）
+ *   ❌ 财务数据（改用 Dexie）
+ *   ❌ 审计结果（改用 Dexie）
+ *
+ * 此 Store 专门存储轻量级配置数据，不包含大型财务数据。
+ * 详见 src/services/storage-strategy.ts
  */
 
 import { create } from 'zustand';

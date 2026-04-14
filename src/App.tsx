@@ -10,17 +10,18 @@ import { runMultiPeriodAudit, generateFilingForms, getCurrentTaxPeriod } from '.
 import { runFullTaxAnalysis, generateOptimizationSuggestions } from './utils/tax-analysis-integration';
 import { analyzeTax } from './utils/tax-service';
 import { generateAuditReportPDF, generateA100000PDF, generateFormsListPDF, downloadPDF } from './services/pdf-generator';
+import { ExcelData, AuditResult, AnalysisResult, OptimizationResult, FilingData } from './stores/dataStore';
 
 type Step = 'import' | 'audit' | 'analyze' | 'optimize' | 'file';
 type AuditPhase = 'idle' | 'L1' | 'L3' | 'SLPE' | 'Final';
 
 interface AppState {
   currentStep: Step;
-  excelData: any;
-  auditResult: any;
-  analysisResult: any;
-  optimizationResult: any;
-  filingData: any;
+  excelData: ExcelData | null;
+  auditResult: AuditResult | null;
+  analysisResult: AnalysisResult | null;
+  optimizationResult: OptimizationResult | null;
+  filingData: FilingData | null;
   isProcessing: boolean;
   isOnline: boolean;
   currentPeriod: TaxPeriod;

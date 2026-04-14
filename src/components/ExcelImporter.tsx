@@ -57,7 +57,7 @@ interface InputInvoice {
   status: 'valid' | 'invalid' | 'voided';
 }
 
-interface ImportedData {
+export interface ImportedData {
   balanceSheet: BalanceSheet;
   incomeStatement: IncomeStatement;
   subjectBalances: SubjectBalance[];

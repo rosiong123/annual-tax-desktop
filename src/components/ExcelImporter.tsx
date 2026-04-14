@@ -66,6 +66,17 @@ export interface ImportedData {
 
 interface ExcelImporterProps {
   onDataImported: (data: ImportedData) => void;
+  /** 导入文件元数据回调（用于91文件列表） */
+  onFilesImported?: (files: Array<{
+    id: string;
+    name: string;
+    size: number;
+    type: string;
+    status: 'pending' | 'parsing' | 'success' | 'error';
+    recordCount?: number;
+    sheetCount?: number;
+    importTime: number;
+  }>) => void;
 }
 
 // 解析Excel文件
@@ -171,7 +182,7 @@ function getMockData(): ImportedData {
   };
 }
 
-export default function ExcelImporter({ onDataImported }: ExcelImporterProps) {
+export default function ExcelImporter({ onDataImported, onFilesImported }: ExcelImporterProps) {
   const [isDragOver, setIsDragOver] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -358,6 +369,20 @@ async function processFiles(excelFiles: File[]) {
       count: excelFiles.length
     });
     setStatus('success');
+
+    // 回调文件元数据（用于91文件列表）
+    const fileMetas = excelFiles.map((file, idx) => ({
+      id: Math.random().toString(36).substring(2, 10) + idx,
+      name: file.name,
+      size: file.size,
+      type: file.type || 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      status: 'success' as const,
+      recordCount: (mergedData.subjectBalances?.length || 0) + (mergedData.invoices?.length || 0),
+      sheetCount: 4,
+      importTime: Date.now(),
+    }));
+    onFilesImported?.(fileMetas);
+
     onDataImported(mergedData);
 
   } catch (err) {

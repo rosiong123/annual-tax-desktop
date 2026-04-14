@@ -105,10 +105,47 @@ export interface OptimizationResult {
   }>;
 }
 
+// 导入文件元数据（用于91文件列表）
+// Excel 导入数据类型（与 ExcelImporter ImportedData 兼容）
+export interface ExcelData {
+  balanceSheet: {
+    year: number; assets: number; liabilities: number; ownerEquity: number;
+    cash: number; accountsReceivable: number; inventory: number; fixedAssets: number; accountsPayable: number;
+  };
+  incomeStatement: {
+    year: number; revenue: number; costOfSales: number; grossProfit: number;
+    operatingExpense: number; managementExpense: number; financialExpense: number;
+    operatingProfit: number; totalProfit: number; netProfit: number;
+  };
+  subjectBalances: Array<{
+    code: string; name: string; category: string;
+    openingBalance: number; debitBalance: number; creditBalance: number; closingBalance: number;
+  }>;
+  invoices: Array<{
+    id: string; date: string; type: 'special' | 'normal'; amount: number; taxAmount: number;
+    sellerName: string; sellerTaxId: string; invoiceCode: string; invoiceNumber: string;
+    status: 'valid' | 'invalid' | 'voided';
+  }>;
+}
+
+export interface ImportedFileMeta {
+  id: string;
+  name: string;
+  size: number;
+  type: string;
+  status: 'pending' | 'parsing' | 'success' | 'error';
+  recordCount?: number;
+  sheetCount?: number;
+  importTime: number;
+}
+
 interface DataState {
   // 财务数据
   excelData: any;
   importedData: any;
+
+  // 导入文件列表（91文件持久化）
+  importedFiles: ImportedFileMeta[];
 
   // 审计结果
   auditResult: AuditResult | null;
@@ -125,6 +162,8 @@ interface DataState {
   // 动作
   setExcelData: (data: any) => void;
   setImportedData: (data: any) => void;
+  setImportedFiles: (files: ImportedFileMeta[]) => void;
+  addImportedFile: (file: ImportedFileMeta) => void;
   setAuditResult: (result: AuditResult | null) => void;
   setAnalysisResult: (result: AnalysisResult | null) => void;
   setOptimizationResult: (result: OptimizationResult | null) => void;
@@ -138,6 +177,7 @@ export const useDataStore = create<DataState>()(
       // 初始状态
       excelData: null,
       importedData: null,
+      importedFiles: [],
       auditResult: null,
       analysisResult: null,
       optimizationResult: null,
@@ -146,6 +186,8 @@ export const useDataStore = create<DataState>()(
       // 动作
       setExcelData: (data) => set({ excelData: data }),
       setImportedData: (data) => set({ importedData: data }),
+      setImportedFiles: (files) => set({ importedFiles: files }),
+      addImportedFile: (file) => set(s => ({ importedFiles: [...s.importedFiles, file] })),
       setAuditResult: (result) => set({ auditResult: result }),
       setAnalysisResult: (result) => set({ analysisResult: result }),
       setOptimizationResult: (result) => set({ optimizationResult: result }),
@@ -153,6 +195,7 @@ export const useDataStore = create<DataState>()(
       clearAllData: () => set({
         excelData: null,
         importedData: null,
+        importedFiles: [],
         auditResult: null,
         analysisResult: null,
         optimizationResult: null,
